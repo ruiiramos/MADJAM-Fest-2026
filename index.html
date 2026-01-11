@@ -13,8 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:MONO@1&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="./styles/index.css">
@@ -101,7 +99,12 @@
                 <!-- MAD JAM FEST SECTION -->
                 <div class="mad-jam-section">
                     <div class="mad-jam-banner">MAD JAM FEST</div>
-                    <img src="./assets/logo-homepage.png" alt="MAD JAM FEST Logo" class="mad-logo-large">
+                    <div class="mad-jam-content">
+                        <img src="./assets/logo-homepage.png" alt="MAD JAM FEST Logo" class="mad-logo-large">
+                        <div class="mad-jam-description">
+                            <p>A MAD Jam Fest é um evento criativo intensivo que reúne diferentes jams de 48 horas, desafiando participantes a desenvolver projetos a partir de um tema revelado no início do evento. O festival promove a experimentação, a colaboração e a apresentação pública dos projetos desenvolvidos.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- JAM CARDS -->
@@ -110,8 +113,13 @@
                         <img src="./assets/animation-icon.svg" alt="Animation Icon">
                     </div>
                     <div class="jam-content">
-                        <h3>MAD ANIMATION JAM</h3>
-                        <p>Cria um trabalho de motion design em 48 horas</p>
+                        <div class="jam-content-default">
+                            <h3>MAD ANIMATION JAM</h3>
+                            <p>Cria um trabalho de motion design em 48 horas</p>
+                        </div>
+                        <div class="jam-content-hover left">
+                            <p>A Animation Jam desafia os participantes a criar um projeto de motion design em 48 horas, a partir do tema revelado. Os trabalhos exploram técnicas digitais ou abordagens experimentais. No final, os projetos são avaliados por um júri.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -120,8 +128,13 @@
                         <img src="./assets/game-icon.svg" alt="Game Icon">
                     </div>
                     <div class="jam-content">
-                        <h3>MAD GAME JAM</h3>
-                        <p>Cria um jogo em 48 horas</p>
+                        <div class="jam-content-default">
+                            <h3>MAD GAME JAM</h3>
+                            <p>Cria um jogo em 48 horas</p>
+                        </div>
+                        <div class="jam-content-hover right">
+                            <p>MAD Game Jam desafia equipas a criar um videojogo, com base no tema revelado. Os participantes desenvolvem um jogo funcional, explorando diferentes áreas como programação, design, arte e som. No final, os projetos são avaliados por um júri.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -130,8 +143,13 @@
                         <img src="./assets/photo-icon.svg" alt="Photo Icon">
                     </div>
                     <div class="jam-content">
-                        <h3>MAD PHOTO JAM</h3>
-                        <p>Cria um projeto fotográfico em 48 horas</p>
+                        <div class="jam-content-default">
+                            <h3>MAD PHOTO JAM</h3>
+                            <p>Cria um projeto fotográfico em 48 horas</p>
+                        </div>
+                        <div class="jam-content-hover left">
+                            <p>A MAD Photo Jam desafia os participantes a desenvolver um projeto fotográfico em 48 horas, baseado no tema revelado. Cada projeto é composto por uma série de imagens. No final, os trabalhos são avaliados por um júri.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -140,8 +158,13 @@
                         <img src="./assets/video-icon.svg" alt="Video Icon">
                     </div>
                     <div class="jam-content">
-                        <h3>MAD VIDEO JAM</h3>
-                        <p>Cria um projeto audiovisual em 48 horas</p>
+                        <div class="jam-content-default">
+                            <h3>MAD VIDEO JAM</h3>
+                            <p>Cria um projeto audiovisual em 48 horas</p>
+                        </div>
+                        <div class="jam-content-hover right">
+                            <p>A MAD Video Jam desafia equipas a criar um projeto audiovisual em 48 horas, a partir do tema revelado. Os participantes desenvolvem vídeos explorando diferentes formatos e linguagens. No final, os projetos são avaliados por um júri.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -171,7 +194,7 @@
                 <div class="testimonial-container">
                     <div class="testimonial-card active" data-index="0">
                         <p class="testimonial-text">
-                            "Participar no Madeon Fest da ESMAD foi intenso e inspirador. Trabalhar em pouco tempo, mas aprendi imenso e fiz com pessoas a ideias que nos levar consigo."
+                            "Participar na MadJam Fest da ESMAD foi intenso e inspirador. Muito trabalho em pouco tempo, mas aprendi imenso e saí de lá com pessoas e ideias que vou levar comigo."
                         </p>
                         <div class="testimonial-author">
                             <div class="author-avatar"></div>
@@ -184,26 +207,26 @@
 
                     <div class="testimonial-card" data-index="1">
                         <p class="testimonial-text">
-                            "Uma experiência incrível que me permitiu conhecer pessoas fantásticas e desenvolver as minhas competências criativas num ambiente desafiante."
+                            "Foi uma experiência intensa do início ao fim. Houve desafios, noites longas e muita pressão, mas no final senti mesmo que evoluí, tanto a nível técnico como pessoal."
                         </p>
                         <div class="testimonial-author">
                             <div class="author-avatar"></div>
                             <div class="author-info">
                                 <p class="author-name">Ex-participante Animation Jam 2024</p>
-                                <p class="author-role">Ana Silva</p>
+                                <p class="author-role">Diogo Pinheiro</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="testimonial-card" data-index="2">
                         <p class="testimonial-text">
-                            "O MAD JAM FEST superou todas as minhas expectativas. A energia, a criatividade e o espírito de equipa foram extraordinários!"
+                            "A MadJam Fest foi puxada, mas super recompensadora. Trabalhámos imenso em pouco tempo, conheci pessoas incríveis e aprendi mais do que estava à espera."
                         </p>
                         <div class="testimonial-author">
                             <div class="author-avatar"></div>
                             <div class="author-info">
                                 <p class="author-name">Ex-participante Photo Jam 2024</p>
-                                <p class="author-role">João Costa</p>
+                                <p class="author-role">Rui Ramos</p>
                             </div>
                         </div>
                     </div>
