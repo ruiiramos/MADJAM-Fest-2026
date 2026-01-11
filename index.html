@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <title>MAD JAM FEST - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono:MONO@1&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/a2e0e6ad4f.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- NAVBAR -->
+        <nav class="nav">
+            <button class="nav-btn green">Inscrições</button>
+            <button class="nav-btn orange active">Home</button>
+            <button class="nav-btn orange">10 MAD Editions</button>
+            <button class="nav-btn orange">FAQ</button>
+            <button class="nav-btn orange">Kit de Sobrevivência</button>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h1>Bem vindo ao<br>MAD JAM FEST!</h1>
+            <img src="./assets/logo-homepage.png" class="logo" alt="MAD JAM FEST Logo">
+            <p>
+                A <strong>MAD Jam Fest</strong> é uma celebração intensa da criatividade em que desenvolvedores, artistas e entusiastas se reúnem para criar algo do zero em apenas <strong>48 horas</strong>. Marca dia <strong>27 de fevereiro a 1 de março</strong> no teu calendário, para criar!
+                <br><br>
+                Este ano extendemos o evento para a semana inteira! As equipas criam o projeto no fim de semana, e podem participar em várias atividades durante a semana seguinte! Depois de <strong>8 dias</strong>, voltamo-nos a encontrar, para uma gala, aonde os <strong>resultados</strong> de cada JAM serão revelados!
+                <br><br>
+                Não tens nada a perder, inscreve-te <strong>Já</strong>!
+            </p>
+        </section>
+
+        <!-- DARK COLUMN SECTION -->
+        <section class="column">
+            <div class="column-inner">
+
+                <!-- COUNTDOWN TIMER -->
+                <div class="countdown-container">
+                    <div class="countdown">
+                        <h3>AS INSCRIÇÕES FECHAM EM:</h3>
+                        <div class="timer">
+                            <div class="time-unit">
+                                <div>
+                                    <div class="time-box" id="days-tens">0</div>
+                                    <div class="time-box" id="days-ones">3</div>
+                                </div>
+                                <span class="time-label">Dias</span>
+                            </div>
+                            <div class="time-unit">
+                                <div>
+                                    <div class="time-box" id="hours-tens">1</div>
+                                    <div class="time-box" id="hours-ones">5</div>
+                                </div>
+                                <span class="time-label">Horas</span>
+                            </div>
+                            <div class="time-unit">
+                                <div>
+                                    <div class="time-box" id="minutes-tens">5</div>
+                                    <div class="time-box" id="minutes-ones">6</div>
+                                </div>
+                                <span class="time-label">Minutos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DISCORD & MAD EDITIONS CARD -->
+                <div class="discord-card">
+                    <div class="discord-section">
+                        <img src="./assets/discord-icon.svg" alt="Discord Icon" class="discord-icon">
+                        <div class="discord-content">
+                            <p>
+                                Junta-te à nossa comunidade de Discord. Podes tirar dúvidas e cria um grupo lá!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="mad-editions-section">
+                        <p>Visita a página <strong>10 MAD EDITIONS</strong> para saber mais sobre o evento, e outras maneiras de participar!</p>
+                        <div class="edition-badge-inline">
+                            <span>10<br>MAD<br>editions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAD JAM FEST SECTION -->
+                <div class="mad-jam-section">
+                    <div class="mad-jam-banner">MAD JAM FEST</div>
+                    <img src="./assets/logo-homepage.png" alt="MAD JAM FEST Logo" class="mad-logo-large">
+                </div>
+
+                <!-- JAM CARDS -->
+                <div class="jam-card left">
+                    <div class="jam-icon animation">
+                        <img src="./assets/animation-icon.svg" alt="Animation Icon">
+                    </div>
+                    <div class="jam-content">
+                        <h3>MAD ANIMATION JAM</h3>
+                        <p>Cria um trabalho de motion design em 48 horas</p>
+                    </div>
+                </div>
+
+                <div class="jam-card right">
+                    <div class="jam-icon game">
+                        <img src="./assets/game-icon.svg" alt="Game Icon">
+                    </div>
+                    <div class="jam-content">
+                        <h3>MAD GAME JAM</h3>
+                        <p>Cria um jogo em 48 horas</p>
+                    </div>
+                </div>
+
+                <div class="jam-card left">
+                    <div class="jam-icon photo">
+                        <img src="./assets/photo-icon.svg" alt="Photo Icon">
+                    </div>
+                    <div class="jam-content">
+                        <h3>MAD PHOTO JAM</h3>
+                        <p>Cria um projeto fotográfico em 48 horas</p>
+                    </div>
+                </div>
+
+                <div class="jam-card right">
+                    <div class="jam-icon video">
+                        <img src="./assets/video-icon.svg" alt="Video Icon">
+                    </div>
+                    <div class="jam-content">
+                        <h3>MAD VIDEO JAM</h3>
+                        <p>Cria um projeto audiovisual em 48 horas</p>
+                    </div>
+                </div>
+
+                <!-- CTA SECTION -->
+                <div class="cta-card">
+                    <p class="cta-title">Inscreve-te agora!</p>
+                    <button class="cta-btn">Inscrições</button>
+                </div>
+
+            </div>
+
+            <!-- BACK TO TOP -->
+            <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                voltar ao topo da página
+            </button>
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials">
+            <h2>O que os participantes anteriores têm a dizer sobre o evento!</h2>
+            
+            <div class="testimonial-slider">
+                <button class="slider-arrow left" onclick="previousTestimonial()">
+                    <img src="./assets/left-arrow.svg" alt="Anterior">
+                </button>
+
+                <div class="testimonial-container">
+                    <div class="testimonial-card active" data-index="0">
+                        <p class="testimonial-text">
+                            "Participar no Madeon Fest da ESMAD foi intenso e inspirador. Trabalhar em pouco tempo, mas aprendi imenso e fiz com pessoas a ideias que nos levar consigo."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <p class="author-name">Ex-participante Game Jam 2023</p>
+                                <p class="author-role">Diogo Pinheiro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-index="1">
+                        <p class="testimonial-text">
+                            "Uma experiência incrível que me permitiu conhecer pessoas fantásticas e desenvolver as minhas competências criativas num ambiente desafiante."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <p class="author-name">Ex-participante Animation Jam 2024</p>
+                                <p class="author-role">Ana Silva</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-index="2">
+                        <p class="testimonial-text">
+                            "O MAD JAM FEST superou todas as minhas expectativas. A energia, a criatividade e o espírito de equipa foram extraordinários!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <p class="author-name">Ex-participante Photo Jam 2024</p>
+                                <p class="author-role">João Costa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="slider-arrow right" onclick="nextTestimonial()">
+                    <img src="./assets/right-arrow.svg" alt="Seguinte">
+                </button>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h3>MAD Jam Fest 2025</h3>
+            <p class="footer-subtitle">Escola Superior de Media, Artes e Design • Rua D. Sancho I • nº 981 4480-876 Vila do Conde</p>
+
+            <!-- BOX 1: Social Icons -->
+            <div class="footer-box social-icons-box">
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <img src="./assets/twitter-icon.svg" alt="Twitter">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="./assets/instagram-icon.svg" alt="Instagram">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="./assets/facebook-icon.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="./assets/tiktok-icon.svg" alt="TikTok">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="./assets/discord-social-icon.svg" alt="Discord">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <span class="footer-left">2025 © ESMAD | P.PORTO</span>
+                <span class="footer-right">INSCRIÇÕES – LINKTREE</span>
+            </div>
+
+            <!-- BOX 2: Partners -->
+            <div class="footer-box partners-section">
+                <h4>Com apoio de:</h4>
+
+                <div class="partners-grid">
+                    <div class="partner-logo"><img src="./assets/rpgaming-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/omen-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/hyperx-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/ae-esmad-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/ipdj-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/neca-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/dg-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/usf-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/thunderize-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/free-your-soul-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/guess-the-choice-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/canal-180-icon.svg" alt=""></div>
+                    <div class="partner-logo"><img src="./assets/d-icon.svg" alt=""></div>
+                </div>
+</div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
