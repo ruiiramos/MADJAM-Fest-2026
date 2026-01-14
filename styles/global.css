@@ -1,0 +1,445 @@
+:root {
+  --cream: #FFF4D2;
+  --white: #FFFEEF;
+  --dark: #1E1E1E;
+  --grey: #252525;
+  --grey-mid: #515151;    /* New: For Button Hover Body */
+  --grey-highlight: #767676; /* New: For Button Hover Top Shadow */
+  --black-grey: #101010;  /* New: For Button Active Bottom Shadow */
+  --dark-orange: #FA5302;
+  --darkest-orange: #963201;
+  --orange: #FE8F01;
+  --yellow: #FCCC00;
+  --bright-yellow: #FEE680;
+  --red: #D1001D;
+  --blue: #0139E6;
+  --green: #109A4F;
+  --purple: #8E2196;
+  --border-radius-lg: 40px;
+  --border-radius-md: 28px;
+  --border-radius-sm: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  color: var(--white);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  font-family: 'Tomorrow', sans-serif;
+  color: #1A1A1A;
+  line-height: 1.6;
+}
+
+.page {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* NAVBAR */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--grey);
+  width: 110%; 
+  margin-left: -5%;
+  padding: 22px 40px; 
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  margin-top: 0;
+  border-radius: 0px 0px 32px 32px;
+  box-shadow: 0 10px 0 var(--dark);
+}
+
+.nav-btn { 
+  border: none; 
+  padding: 10px 5px; 
+  border-radius: 999px; 
+  font-family: 'Tomorrow', sans-serif; 
+  font-weight: 600; 
+  font-size: 14px; 
+  cursor: pointer; 
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25);
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  flex: 1 1 0;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nav-btn.green { 
+  background: var(--green);
+  box-shadow:
+    inset 0 3px 0 #70C295,
+    inset 0 -4px 0 #0A5C2F;
+}
+
+.nav-btn.green:hover {
+  background: #70C295;
+  box-shadow:
+    inset 0 3px 0 #CFEBDC,
+    inset 0 -4px 0 #109A4F;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.nav-btn.green:active,
+.nav-btn.green.active {
+  background: #0A5C2F;
+  transform: translateY(0);
+  box-shadow:
+    inset 0 3px 0 #109A4F,
+    inset 0 -4px 0 #063E20;
+}
+
+.nav-btn.green.pressed {
+  background: #0A5C2F;
+  box-shadow:
+    inset 0 3px 0 #109A4F,
+    inset 0 -4px 0 #063E20;
+  pointer-events: none;
+  cursor: default;
+  transform: none;
+}
+
+.nav-btn.orange {
+  background: var(--orange);
+  box-shadow:
+    inset 0 3px 0 var(--yellow),
+    inset 0 -4px 0 var(--dark-orange);
+}
+
+.nav-btn.orange:hover {
+  background: var(--yellow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow:
+    inset 0 3px 0 var(--bright-yellow),
+    inset 0 -4px 0 var(--orange);
+}
+
+.nav-btn.orange:active,
+.nav-btn.orange.active {
+  background: var(--dark-orange);
+  transform: translateY(0);
+  box-shadow:
+    inset 0 3px 0 var(--orange),
+    inset 0 -4px 0 var(--darkest-orange);
+}
+
+.nav-btn.orange.pressed {
+  background: var(--dark-orange);
+  box-shadow:
+    inset 0 3px 0 var(--orange),
+    inset 0 -4px 0 var(--darkest-orange);
+  pointer-events: none;
+  cursor: default;
+  transform: none;
+}
+
+/* CALL TO ACTION BUTTON */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: var(--grey-mid);
+  box-shadow:
+    inset 0 3px 0 var(--grey-highlight),
+    inset 0 -5px 0 var(--grey);
+    
+  color: #fff;
+  border: none;
+  padding: 14px 48px;
+  border-radius: 999px;
+  font-family: 'Sono', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.cta-btn:hover {
+  background: #BDBDBD;
+  color: var(--dark);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 3px 0 #E9E9E9,
+    inset 0 -5px 0 var(--grey-mid);
+}
+
+.cta-btn:active {
+  background: var(--grey);
+  color: #fff;
+  transform: translateY(0);
+  box-shadow:
+    inset 0 3px 0 var(--grey-mid),
+    inset 0 -5px 0 var(--dark);
+}
+
+/* Back to top Button */
+.back-to-top {
+  background: var(--grey);
+  box-shadow:
+    inset 0 5px 0 var(--grey-mid),
+    inset 0 -7px 0 var(--dark);
+  color: #fff;
+  border: none;
+  padding: 25px 110px;
+  border-radius: 20px;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+  margin: 32px auto 0;
+  display: block;
+}
+
+.back-to-top:hover {
+  background: var(--grey-mid);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 5px 0 var(--grey-highlight),
+    inset 0 -7px 0 var(--grey);
+}
+
+.back-to-top:active {
+  background: var(--dark);
+  transform: translateY(0);
+  box-shadow:
+    inset 0 5px 0 var(--grey),
+    inset 0 -7px 0 var(--black-grey);/
+}
+
+/* Orange Button */
+.alt-btn {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto;
+  
+  /* UPDATED: Nav Button Colors & Shadow Logic */
+  background: var(--orange);
+  box-shadow:
+    inset 0 3px 0 var(--yellow),
+    inset 0 -4px 0 var(--dark-orange);
+    
+  border: none;
+  border-radius: 20px; /* Kept Original Shape */
+  padding: 16px 24px;
+  font-family: 'Sono', monospace;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+  
+  /* Added Transitions to match Nav Button */
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.alt-btn span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.alt-btn:hover {
+  /* UPDATED: Nav Button Hover State */
+  background: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 3px 0 var(--bright-yellow),
+    inset 0 -4px 0 var(--orange);
+}
+
+.alt-btn:active {
+  /* UPDATED: Nav Button Active State */
+  background: var(--dark-orange);
+  transform: translateY(0);
+  box-shadow:
+    inset 0 3px 0 var(--orange),
+    inset 0 -4px 0 var(--darkest-orange);
+}
+
+/* FOOTER */
+.footer {
+  background: var(--grey);
+  border-radius: 80px 80px 0px 0px;
+  padding: 5px 32px;
+  text-align: center;
+  color: #fff;
+  box-shadow: inset 0 7px 0 #515151;
+}
+
+.footer h3 {
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-subtitle {
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.footer-box {
+  background: #1A1A1A;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius-md);
+  padding: 32px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  display: block;
+}
+
+/* SOCIAL ICONS BOX */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin: 0;
+}
+
+.social-icons-box {
+  margin-bottom: 32px;
+}
+
+.social-icon {
+  background: var(--orange);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 5px 0 var(--yellow),
+    inset 0 -5px 0 var(--dark-orange);
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.social-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  background: var(--yellow);
+  box-shadow:
+    inset 0 5px 0 var(--bright-yellow),
+    inset 0 -5px 0 var(--orange);
+  transform: translateY(-2px);
+}
+
+.social-icon:active {
+  background: var(--dark-orange);
+  box-shadow:
+    inset 0 5px 0 var(--orange),
+    inset 0 -5px 0 var(--darkest-orange);
+  transform: translateY(0);
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Sono', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 28px;
+  color: #fff;
+}
+
+.footer-left,
+.footer-right {
+  white-space: nowrap;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+/* PARTNERS BOX */
+.partners-section {
+  margin-top: 0;
+}
+
+.partners-section h4 {
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo img {
+  width: 70%;
+  height: auto;
+  object-fit: contain;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  justify-items: center;
+}
+
+.partners-grid .partner-logo:nth-child(13) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 480px) {
+  .nav {
+    gap: 8px;
+  }
+
+  .nav-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
