@@ -73,3 +73,7 @@ if (testimonials.length > 0) {
 
 // Auto-advance testimonials every 5 seconds
 setInterval(nextTestimonial, 5000);
+
+document.querySelector('.edition-base-inline').addEventListener('click', function() {
+    window.location.href = '../views/madyears.html';
+});

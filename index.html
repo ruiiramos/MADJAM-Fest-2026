@@ -24,11 +24,11 @@
 
         <!-- NAVBAR -->
         <nav class="nav">
-            <button class="nav-btn green">Inscrições</button>
-            <button class="nav-btn orange active">Home</button>
-            <button class="nav-btn orange">10 MAD Editions</button>
-            <button class="nav-btn orange">FAQ</button>
-            <button class="nav-btn orange">Kit de Sobrevivência</button>
+            <a href="./views/inscricoes.html" class="nav-btn green">Inscrições</a>
+            <a href="./index.html" class="nav-btn orange active">Home</a>
+            <a href="./views/madyears.html" class="nav-btn orange">10 MAD Editions</a>
+            <a href="./views/faq.html" class="nav-btn orange">FAQ</a>
+            <a href="#" class="nav-btn orange">Kit de Sobrevivência</a>
         </nav>
 
         <!-- HERO SECTION -->
@@ -75,12 +75,16 @@
                                 <span class="time-label">Minutos</span>
                             </div>
                         </div>
+                        <div class="countdown-stats">
+                            <div class="countdown-stat">Participantes: 26</div>
+                            <div class="countdown-stat">Grupos: 13</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- DISCORD & MAD EDITIONS CARD -->
                 <div class="discord-card">
-                    <div class="discord-section">
+                    <div class="discord-section" onclick="window.location.href='https://discord.com/invite/ZtnDq3H'" style="cursor: pointer;">
                         <img src="./assets/discord-icon.svg" alt="Discord Icon" class="discord-icon">
                         <div class="discord-content">
                             <p>
@@ -91,9 +95,11 @@
                     
                     <div class="mad-editions-section">
                         <p>Visita a página <strong>10 MAD EDITIONS</strong> para saber mais sobre o evento, e outras maneiras de participar!</p>
-                        <div class="edition-badge-inline">
-                            <span>10<br>MAD<br>editions</span>
-                        </div>
+                        <a href="./views/madyears.html" class="edition-link">
+                            <div class="edition-badge-inline">
+                                <span>10<br>MAD<br>editions</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -172,7 +178,7 @@
                 <!-- CTA SECTION -->
                 <div class="cta-card">
                     <p class="cta-title">Inscreve-te agora!</p>
-                    <button class="cta-btn">Inscrições</button>
+                    <a href="./views/inscricoes.html" class="cta-btn">Inscrições</a>
                 </div>
 
             </div>
@@ -247,19 +253,19 @@
             <!-- BOX 1: Social Icons -->
             <div class="footer-box social-icons-box">
                 <div class="social-icons">
-                    <a href="#" class="social-icon">
+                    <a href="https://x.com/MADJamFest" class="social-icon">
                         <img src="./assets/twitter-icon.svg" alt="Twitter">
                     </a>
-                    <a href="#" class="social-icon">
+                    <a href="https://www.instagram.com/madjamfest/" class="social-icon">
                         <img src="./assets/instagram-icon.svg" alt="Instagram">
                     </a>
-                    <a href="#" class="social-icon">
+                    <a href="https://www.facebook.com/madjamfest/" class="social-icon">
                         <img src="./assets/facebook-icon.svg" alt="Facebook">
                     </a>
-                    <a href="#" class="social-icon">
+                    <a href="https://www.tiktok.com/@madjamfest" class="social-icon">
                         <img src="./assets/tiktok-icon.svg" alt="TikTok">
                     </a>
-                    <a href="#" class="social-icon">
+                    <a href="https://discord.com/invite/ZtnDq3H" class="social-icon">
                         <img src="./assets/discord-social-icon.svg" alt="Discord">
                     </a>
                 </div>
@@ -267,7 +273,10 @@
 
             <div class="footer-info">
                 <span class="footer-left">2025 © ESMAD | P.PORTO</span>
-                <span class="footer-right">INSCRIÇÕES – LINKTREE</span>
+                <span class="footer-right">
+                    INSCRIÇÕES – <a href="https://linktr.ee/madjamfest" class="footer-link" target="_blank" rel="noopener">LINKTREE</a>
+                </span>
+
             </div>
 
             <!-- BOX 2: Partners -->
