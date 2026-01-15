@@ -3,9 +3,9 @@
   --white: #FFFEEF;
   --dark: #1E1E1E;
   --grey: #252525;
-  --grey-mid: #515151;    /* New: For Button Hover Body */
-  --grey-highlight: #767676; /* New: For Button Hover Top Shadow */
-  --black-grey: #101010;  /* New: For Button Active Bottom Shadow */
+  --grey-mid: #515151;
+  --grey-highlight: #767676;
+  --black-grey: #101010;
   --dark-orange: #FA5302;
   --darkest-orange: #963201;
   --orange: #FE8F01;
@@ -18,6 +18,19 @@
   --border-radius-lg: 40px;
   --border-radius-md: 28px;
   --border-radius-sm: 18px;
+
+    --game-light: #6788F0;
+    --game-mid:   #0139E6;
+    --game-dark:  #01228A;
+    --video-light: #BB7AC0;
+    --video-mid:   #8E2196;
+    --video-dark:  #55145A;
+    --photo-light: #70C295;
+    --photo-mid:   #109A4F;
+    --photo-dark:  #0A5C2F;
+    --anim-light:  #E36677;
+    --anim-mid:    #D1001D;
+    --anim-dark:   #7D0011;
 }
 
 * {
@@ -26,9 +39,8 @@
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-  color: var(--white);
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -38,9 +50,16 @@ body {
   font-family: 'Tomorrow', sans-serif;
   color: #1A1A1A;
   line-height: 1.6;
+  background: var(--Linear, linear-gradient(180deg, #FEF1B3 0%, #FFE2B3 50%, #FDD3B3 100%));
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Tomorrow', sans-serif;
 }
 
 .page {
+  background: transparent;
   flex: 1;
   max-width: 1000px;
   margin: 0 auto;
@@ -212,7 +231,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
-  margin: 32px auto 0;
+  margin: 72px auto 0;
   display: block;
 }
 

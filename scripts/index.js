@@ -42,38 +42,73 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown(); // Initial call
 
-// Testimonial Carousel
+// --- Advanced Testimonial Logic ---
 let currentTestimonial = 0;
 const testimonials = document.querySelectorAll('.testimonial-card');
+const totalTestimonials = testimonials.length;
+let autoPlayTimer;
+let resumeTimer;
 
-function showTestimonial(index) {
-    testimonials.forEach((card, i) => {
-        if (i === index) {
-            card.classList.add('active');
-        } else {
-            card.classList.remove('active');
-        }
+function updateCarousel() {
+    // 1. Reset all cards
+    testimonials.forEach(card => {
+        card.classList.remove('active', 'prev', 'next');
     });
+
+    // 2. Calculate Indices (Circular)
+    const prevIndex = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+    const nextIndex = (currentTestimonial + 1) % totalTestimonials;
+
+    // 3. Set Classes
+    testimonials[currentTestimonial].classList.add('active');
+    testimonials[prevIndex].classList.add('prev');
+    testimonials[nextIndex].classList.add('next');
 }
 
-function nextTestimonial() {
-    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-    showTestimonial(currentTestimonial);
+function nextTestimonial(isAuto = false) {
+    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+    updateCarousel();
+    if (!isAuto) handleManualInteraction();
 }
 
 function previousTestimonial() {
-    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-    showTestimonial(currentTestimonial);
+    currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+    updateCarousel();
+    handleManualInteraction();
 }
 
-// Initialize first testimonial
-if (testimonials.length > 0) {
-    showTestimonial(0);
+// Logic to pause auto-play on interaction
+function handleManualInteraction() {
+    // Stop the auto-rotation
+    clearInterval(autoPlayTimer);
+    clearTimeout(resumeTimer);
+
+    // Wait 10 seconds, then restart auto-rotation
+    resumeTimer = setTimeout(() => {
+        startAutoPlay();
+    }, 10000); 
 }
 
-// Auto-advance testimonials every 5 seconds
-setInterval(nextTestimonial, 5000);
+function startAutoPlay() {
+    // Clear existing to avoid duplicates
+    clearInterval(autoPlayTimer);
+    // Move every 3 seconds (you can change 3000 to whatever speed you want)
+    autoPlayTimer = setInterval(() => {
+        nextTestimonial(true); 
+    }, 3000);
+}
 
-document.querySelector('.edition-base-inline').addEventListener('click', function() {
-    window.location.href = '../views/madyears.html';
+// Initialize
+if (totalTestimonials > 0) {
+    updateCarousel();
+    startAutoPlay();
+}
+
+// Also pause if user clicks the side cards directly
+document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.addEventListener('click', () => {
+        // If clicking a side card, move to it
+        if (card.classList.contains('prev')) previousTestimonial();
+        if (card.classList.contains('next')) nextTestimonial();
+    });
 });

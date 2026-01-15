@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/assets/favicon.ico">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -15,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:MONO@1&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="./styles/global.css">
 </head>
@@ -23,7 +21,6 @@
 <body>
     <div class="page">
 
-        <!-- NAVBAR -->
         <nav class="nav">
             <a href="./views/inscricoes.html" class="nav-btn green">Inscrições</a>
             <a href="./index.html" class="nav-btn orange pressed">Home</a>
@@ -32,7 +29,6 @@
             <a href="./assets/kit_sobrevivencia.pdf" class="nav-btn orange">Kit de Sobrevivência</a>
         </nav>
 
-        <!-- HERO SECTION -->
         <section class="hero">
             <h1>Bem vindo ao<br>MAD JAM FEST!</h1>
             <img src="./assets/logo-homepage.png" class="logo" alt="MAD JAM FEST Logo">
@@ -45,11 +41,9 @@
             </p>
         </section>
 
-        <!-- DARK COLUMN SECTION -->
         <section class="column">
             <div class="column-inner">
 
-                <!-- COUNTDOWN TIMER -->
                 <div class="countdown-container">
                     <div class="countdown">
                         <h3>AS INSCRIÇÕES FECHAM EM:</h3>
@@ -83,7 +77,6 @@
                     </div>
                 </div>
 
-                <!-- DISCORD & MAD EDITIONS CARD -->
                 <div class="discord-card">
                     <div class="discord-section" onclick="window.location.href='https://discord.com/invite/ZtnDq3H'" style="cursor: pointer;">
                         <img src="./assets/discord-icon.svg" alt="Discord Icon" class="discord-icon">
@@ -104,18 +97,18 @@
                     </div>
                 </div>
 
-                <!-- MAD JAM FEST SECTION -->
                 <div class="mad-jam-section">
                     <div class="mad-jam-banner">MAD JAM FEST</div>
-                    <div class="mad-jam-content">
+                    
+                    <div class="mad-jam-body">
                         <img src="./assets/logo-homepage.png" alt="MAD JAM FEST Logo" class="mad-logo-large">
-                        <div class="mad-jam-description">
+                        
+                        <div class="mad-jam-curtain">
                             <p>A MAD Jam Fest é um evento criativo intensivo que reúne diferentes jams de 48 horas, desafiando participantes a desenvolver projetos a partir de um tema revelado no início do evento. O festival promove a experimentação, a colaboração e a apresentação pública dos projetos desenvolvidos.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- JAM CARDS -->
                 <div class="jam-card left">
                     <div class="jam-icon animation">
                         <img src="./assets/animation-icon.svg" alt="Animation Icon">
@@ -176,7 +169,6 @@
                     </div>
                 </div>
 
-                <!-- CTA SECTION -->
                 <div class="cta-card">
                     <p class="cta-title">Inscreve-te agora!</p>
                     <a href="./views/inscricoes.html" class="cta-btn">Inscrições</a>
@@ -184,57 +176,82 @@
 
             </div>
 
-            <!-- BACK TO TOP -->
             <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 voltar ao topo da página
             </button>
         </section>
 
-        <!-- TESTIMONIALS SECTION -->
         <section class="testimonials">
             <h2>O que os participantes anteriores têm a dizer sobre o evento!</h2>
-            
+
             <div class="testimonial-slider">
+                
                 <button class="slider-arrow left" onclick="previousTestimonial()">
                     <img src="./assets/left-arrow.svg" alt="Anterior">
                 </button>
 
                 <div class="testimonial-container">
-                    <div class="testimonial-card active" data-index="0">
+                    <div class="testimonial-card madjam" data-index="0">
                         <p class="testimonial-text">
-                            "Participar na MadJam Fest da ESMAD foi intenso e inspirador. Muito trabalho em pouco tempo, mas aprendi imenso e saí de lá com pessoas e ideias que vou levar comigo."
+                            "A organização deste evento foi impecável. Desde a cerimónia de abertura até à entrega de prémios, senti-me sempre acompanhada. O staff da ESMAD está de parabéns por criar algo com esta dimensão!"
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"></div>
+                            <div class="author-icon madjam" style="background-image: url('./assets/avatar_mad.jpg'), url('./assets/profile-icon.svg');"></div>
                             <div class="author-info">
-                                <p class="author-name">Ex-participante Game Jam 2023</p>
-                                <p class="author-role">Diogo Pinheiro</p>
+                                <p class="author-name">Beatriz Nunes</p>
+                                <p class="author-role">Voluntária 2024</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="testimonial-card" data-index="1">
+                    <div class="testimonial-card game" data-index="1">
                         <p class="testimonial-text">
-                            "Foi uma experiência intensa do início ao fim. Houve desafios, noites longas e muita pressão, mas no final senti mesmo que evoluí, tanto a nível técnico como pessoal."
+                            "Nunca pensei que criar um jogo em 48 horas fosse tão caótico e gratificante ao mesmo tempo! A nossa equipa mal dormiu, mas ver o código a funcionar nos últimos minutos foi uma adrenalina inexplicável."
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"></div>
+                            <div class="author-icon game" style="background-image: none, url('./assets/profile-icon.svg');"></div>
                             <div class="author-info">
-                                <p class="author-name">Ex-participante Animation Jam 2024</p>
-                                <p class="author-role">Diogo Pinheiro</p>
+                                <p class="author-name">João Silva</p>
+                                <p class="author-role">Vencedor Game Jam</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="testimonial-card" data-index="2">
+                    <div class="testimonial-card animation" data-index="2">
                         <p class="testimonial-text">
-                            "A MadJam Fest foi puxada, mas super recompensadora. Trabalhámos imenso em pouco tempo, conheci pessoas incríveis e aprendi mais do que estava à espera."
+                            "O desafio de contar uma história sem palavras apenas com motion design obrigou-nos a ser super criativos. Adorei ver as técnicas diferentes que cada grupo usou. Saí daqui com o portfólio melhorado."
                         </p>
                         <div class="testimonial-author">
-                            <div class="author-avatar"></div>
+                            <div class="author-icon animation" style="background-image: url('./assets/avatar_anim.jpg'), url('./assets/profile-icon.svg');"></div>
                             <div class="author-info">
-                                <p class="author-name">Ex-participante Photo Jam 2024</p>
-                                <p class="author-role">Rui Ramos</p>
+                                <p class="author-name">Ana Beatriz</p>
+                                <p class="author-role">Participante Animation Jam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card photo" data-index="3">
+                        <p class="testimonial-text">
+                            "Foi um exercício incrível de olhar. Receber o tema e ter de correr pela cidade para encontrar o ângulo perfeito sob pressão fez-me evoluir imenso. A exposição final na gala foi o momento alto da semana!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-icon photo" style="background-image: url('./assets/avatar_photo.jpg'), url('./assets/profile-icon.svg');"></div>
+                            <div class="author-info">
+                                <p class="author-name">Carlos Mendes</p>
+                                <p class="author-role">Menção Honrosa Photo Jam</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card video" data-index="4">
+                        <p class="testimonial-text">
+                            "A loucura da edição às 4 da manhã com a equipa a rir de cansaço é inesquecível. Conseguimos produzir uma curta-metragem complexa num tempo recorde. A MAD Jam prova que a criatividade não tem limites."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-icon video" style="background-image: url('./assets/avatar_video.jpg'), url('./assets/profile-icon.svg');"></div>
+                            <div class="author-info">
+                                <p class="author-name">Mariana Costa</p>
+                                <p class="author-role">Participante Video Jam</p>
                             </div>
                         </div>
                     </div>
@@ -243,15 +260,14 @@
                 <button class="slider-arrow right" onclick="nextTestimonial()">
                     <img src="./assets/right-arrow.svg" alt="Seguinte">
                 </button>
+
             </div>
         </section>
 
-        <!-- FOOTER -->
         <footer class="footer">
             <h3>MAD Jam Fest 2025</h3>
             <p class="footer-subtitle">Escola Superior de Media, Artes e Design • Rua D. Sancho I • nº 981 4480-876 Vila do Conde</p>
 
-            <!-- BOX 1: Social Icons -->
             <div class="footer-box social-icons-box">
                 <div class="social-icons">
                     <a href="https://x.com/MADJamFest" class="social-icon">
@@ -277,13 +293,10 @@
                 <span class="footer-right">
                     INSCRIÇÕES – <a href="https://linktr.ee/madjamfest" class="footer-link" target="_blank" rel="noopener">LINKTREE</a>
                 </span>
-
             </div>
 
-            <!-- BOX 2: Partners -->
             <div class="footer-box partners-section">
                 <h4>Com apoio de:</h4>
-
                 <div class="partners-grid">
                     <div class="partner-logo"><img src="./assets/rpgaming-icon.svg" alt=""></div>
                     <div class="partner-logo"><img src="./assets/omen-icon.svg" alt=""></div>
@@ -299,14 +312,11 @@
                     <div class="partner-logo"><img src="./assets/canal-180-icon.svg" alt=""></div>
                     <div class="partner-logo"><img src="./assets/d-icon.svg" alt=""></div>
                 </div>
-</div>
-
             </div>
         </footer>
 
     </div>
 
-    <!-- JavaScript -->
     <script src="./scripts/index.js"></script>
 </body>
 </html>

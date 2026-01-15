@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 64px;
+  gap: 48px;
   margin-bottom: 96px;
 }
 
@@ -16,6 +16,7 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 24px;
+  min-height: 58px; /* Stops jumping */
 }
 
 .hero-logo {
@@ -24,9 +25,10 @@
 }
 
 .inscricoes-hero p {
-    text-align: left;
-    font-size: 15px;
-    line-height: 1.7;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 80px; /* Stops jumping */
 }
 
 /* FORM CARD */
@@ -39,68 +41,40 @@
 .form-outer {
   background: var(--dark);
   border-radius: 48px;
-  padding: 32px;
+  padding: 32px; 
   width: 100%;
   max-width: 720px;
+  
+  display: flex;
+  flex-direction: column; /* Stack buttons and iframe vertically */
+  align-items: center;
+  
   box-shadow:
     inset 0 7px 0 #515151,
     inset 0 -7px 0 rgba(0,0,0,0.4);
 }
 
-.form-inner {
-  background: var(--white);
-  border-radius: 36px;
-  padding: 48px 32px;
-  text-align: center;
-  box-shadow: inset 0 7px 0 #A4A4A4;
-}
-
-.form-inner h3 {
-  font-size: 20px;
-  font-weight: 300;
+/* TABS CONTAINER (Inside Dark Part) */
+.form-tabs {
+  display: flex;
+  gap: 16px;
   margin-bottom: 32px;
-  color: #333;
-}
-
-.form-btn {
-  background: #4a4a4a;
-  color: #fff;
-  border: none;
-  padding: 14px 64px;
-  border-radius: 15px;
-  font-family: 'Sono', monospace;
-  font-size: 15px;
-  cursor: pointer;
-
-  box-shadow:
-    inset 0 5px 0 #A4A4A4,
-    inset 0 -5px 0 rgba(0,0,0,0.4);
-}
-
-.form-btn:hover {
-    background: #5a5a5a;
-  box-shadow:
-    inset 0 2px 0 #A4A4A4,
-    inset 0 -2px 0 rgba(0,0,0,0.5);
-  transform: translateY(-1px);
-}
-
-
-/* EXTRA FORMS */
-.extra-forms {
-  background: var(--dark);
-  border-radius: 48px;
-  padding: 48px 32px;
-  max-width: 720px;
+  flex-wrap: wrap;
+  justify-content: center;
   width: 100%;
-  text-align: center;
-  box-shadow:
-    inset 0 12px 0 #515151,
-    inset 0 -10px 0 rgba(0,0,0,0.4);
 }
 
-.extra-forms p {
-  color: #fff;
-  font-size: 14px;
-  margin-bottom: 32px;
+/* Ensure buttons look like nav buttons but fit here */
+.form-tabs .nav-btn {
+  /* You can adjust scale here if they feel too big for the form */
+  cursor: pointer;
+  border: none; /* Reset if <button> adds border */
+}
+
+.form-outer iframe {
+  width: 100%;
+  background: #fff;
+  border-radius: 32px;
+  display: block;
+  box-shadow: inset 0 7px 0 #A4A4A4; 
 }
