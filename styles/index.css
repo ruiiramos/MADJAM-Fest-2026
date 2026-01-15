@@ -89,10 +89,6 @@
   z-index: 5;
 }
 
-.countdown-container:hover {
-  transform: translateY(-4px);
-}
-
 .countdown {
   position: relative;
   padding: 32px 24px;
@@ -127,11 +123,6 @@
 
 .countdown-container:hover .countdown::before {
   bottom: 90px;
-}
-
-.countdown-container:hover .countdown h3,
-.countdown-container:hover .countdown .timer {
-  transform: translateY(-45px);
 }
 
 .countdown h3,
@@ -285,12 +276,20 @@
 /* =========================================
    5. MAD JAM SECTION
    ========================================= */
+/* =========================================
+   5. MAD JAM SECTION (VERTICAL DRAWER)
+   ========================================= */
 .mad-jam-section {
   width: 100%;
   max-width: 420px;
   display: flex; flex-direction: column;
+  
+  /* Overall rounded corners */
   border-radius: var(--border-radius-md);
+  
+  /* Crucial: Prevents anything from sticking out of the rounded corners */
   overflow: hidden; 
+  
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   margin-top: 24px;
   cursor: pointer;
@@ -307,23 +306,38 @@
   box-shadow: inset 0 5px 0 var(--yellow), inset 0 -5px 0 var(--dark-orange);
   color: #fff;
   padding: 32px 24px;
+  
   font-family: 'Tomorrow', sans-serif;
-  font-weight: 700; font-size: 24px; text-align: center;
-  border-radius: var(--border-radius-md);
+  font-weight: 700; 
+  font-size: 24px; 
+  text-align: center;
+  
+  /* Ensure the cap sits on top of the sliding part */
   position: relative;
   z-index: 20;
+  
+  /* Rounded top, flat bottom (or slight radius if preferred) */
+  border-radius: var(--border-radius-md);
 }
 
 .mad-jam-body {
   position: relative;
   background: var(--dark);
+  
+  /* Tuck it under the orange banner so the slide starts "inside" */
   margin-top: -30px; 
   padding-top: 30px;
+  
+  /* Round the bottom corners */
   border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+  
   display: flex; align-items: center; justify-content: center;
   height: 280px; 
   width: 100%;
   z-index: 1;
+  
+  /* CRITICAL FIX: Clips the square curtain to the rounded body */
+  overflow: hidden; 
 }
 
 .mad-logo-large {
@@ -334,12 +348,19 @@
 .mad-jam-curtain {
   position: absolute;
   top: 0; left: 0; right: 0;
+  
   height: 0;
   background: var(--dark-orange);
-  overflow: hidden;
+  
+  /* Ensure text is centered */
   display: flex; align-items: center; justify-content: center;
   padding: 30px 32px 0 32px;
-  z-index: 5;
+  
+  z-index: 5; /* Under banner (20), Over Body (1) */
+  
+  /* Match the rounded bottom of the body */
+  border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+  
   transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -350,6 +371,7 @@
   font-family: 'Sono', sans-serif;
   font-size: 13px; font-weight: 400; line-height: 1.6;
   text-align: center; margin: 0;
+  
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
