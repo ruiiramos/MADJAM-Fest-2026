@@ -1,0 +1,128 @@
+body {
+  background: var(--cream);
+  font-family: 'Tomorrow', sans-serif;
+}
+
+.faq-card {
+  background: var(--grey);
+  border-radius: 48px;
+  padding: 48px 32px;
+  max-width: 720px;
+  margin: 0 auto 80px;
+  color: #fff;
+  box-shadow: 
+    inset 0 10px 0 #515151, 
+    inset 0 -10px 0 #101010;
+}
+
+.faq-image img {
+  width: 100%;
+  border-radius: 28px;
+  margin-bottom: 32px;
+}
+
+.faq-card h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.faq-intro {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.faq-search {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border-radius: 999px;
+  padding: 14px 20px;
+  box-shadow: inset 0 -5px 0 #515151;
+  margin-bottom: 28px;
+}
+
+.faq-search-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.faq-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-family: 'Sono', monospace;
+  font-size: 18px;
+}
+
+.faq-search input::placeholder {
+  color: #252525;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--white);
+  color: #252525;
+  border-radius: 50px;
+  padding: 14px 20px;
+  box-shadow: inset 0 -5px 0 #515151;
+  cursor: pointer;
+  transition: border-radius 0.3s ease;
+}
+
+.faq-item[open] {
+  border-radius: 28px;
+}
+
+.faq-item p {
+  margin-top: 16px;
+  padding-right: 8px;
+}
+
+.faq-item summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item span {
+    font-size: 18px;
+}
+
+.faq-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* roda a seta quando abre */
+.faq-item[open] .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  margin-top: 14px;
+  font-family: 'Sono', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
