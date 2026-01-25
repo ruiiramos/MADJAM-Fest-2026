@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     faqItems.forEach(item => {
       const question = item.querySelector('summary span')?.textContent.toLowerCase() || '';
+      const answer = item.querySelector('p')?.textContent.toLowerCase() || '';
 
-      const match = question.includes(query);
+      const match = question.includes(query) || answer.includes(query);
 
       if (match) {
         item.style.display = '';

@@ -114,7 +114,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* roda a seta quando abre */
 .faq-item[open] .faq-arrow {
   transform: rotate(180deg);
 }
