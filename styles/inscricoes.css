@@ -64,11 +64,48 @@
   width: 100%;
 }
 
-/* Ensure buttons look like nav buttons but fit here */
-.form-tabs .nav-btn {
-  /* You can adjust scale here if they feel too big for the form */
-  cursor: pointer;
-  border: none; /* Reset if <button> adds border */
+.form-tabs .orange-btn {
+  border: none;
+  padding: 10px 5px; 
+  border-radius: 12px; 
+  font-family: 'Tomorrow', sans-serif; 
+  font-weight: 600; 
+  font-size: 14px; 
+  cursor: pointer; 
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.25);
+  background: var(--orange);
+  box-shadow:
+    inset 0 3px 0 var(--yellow),
+    inset 0 -4px 0 var(--dark-orange);
+  color: var(--white);
+  text-decoration: none;
+  text-align: center;
+  flex: 1 1 0;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-tabs .orange-btn.pressed {
+  background: var(--dark-orange);
+  box-shadow:
+    inset 0 3px 0 var(--orange),
+    inset 0 -4px 0 var(--darkest-orange);
+  pointer-events: none;
+  cursor: default;
+  transform: none;
+}
+
+.form-tabs .orange-btn.pressed:hover {
+  background: var(--dark-orange);
+  transform: none;
+}
+
+.form-tabs .orange-btn:hover {
+  transform: translateY(-2px);
+  background: var(--yellow);
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow:
+    inset 0 3px 0 var(--bright-yellow),
+    inset 0 -4px 0 var(--orange);
 }
 
 .form-outer iframe {

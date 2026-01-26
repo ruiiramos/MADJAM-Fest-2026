@@ -52,7 +52,6 @@
   gap: 28px;
 }
 
-/* Center Spine Line */
 .column-inner::after {
   content: "";
   position: absolute;
@@ -284,10 +283,8 @@
   max-width: 420px;
   display: flex; flex-direction: column;
   
-  /* Overall rounded corners */
   border-radius: var(--border-radius-md);
   
-  /* Crucial: Prevents anything from sticking out of the rounded corners */
   overflow: hidden; 
   
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -312,11 +309,9 @@
   font-size: 24px; 
   text-align: center;
   
-  /* Ensure the cap sits on top of the sliding part */
   position: relative;
   z-index: 20;
   
-  /* Rounded top, flat bottom (or slight radius if preferred) */
   border-radius: var(--border-radius-md);
 }
 
@@ -324,11 +319,9 @@
   position: relative;
   background: var(--dark);
   
-  /* Tuck it under the orange banner so the slide starts "inside" */
   margin-top: -30px; 
   padding-top: 30px;
   
-  /* Round the bottom corners */
   border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
   
   display: flex; align-items: center; justify-content: center;
@@ -336,7 +329,6 @@
   width: 100%;
   z-index: 1;
   
-  /* CRITICAL FIX: Clips the square curtain to the rounded body */
   overflow: hidden; 
 }
 
@@ -352,13 +344,11 @@
   height: 0;
   background: var(--dark-orange);
   
-  /* Ensure text is centered */
   display: flex; align-items: center; justify-content: center;
   padding: 30px 32px 0 32px;
   
-  z-index: 5; /* Under banner (20), Over Body (1) */
+  z-index: 5;
   
-  /* Match the rounded bottom of the body */
   border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
   
   transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -385,27 +375,22 @@
    6. JAM CARDS (FIXED TEXT LAYERING)
    ========================================= */
 
-/* Main Wrapper */
 .jam-card {
   position: relative;
   width: 60%;
   max-width: 940px;
-  /* Massive height */
   min-height: 220px; 
   margin-bottom: 80px;
   z-index: 5;
   display: flex;
   align-items: center;
-  /* Allow overlap of icon */
   overflow: visible; 
 }
 
-/* Hover Lift */
 .jam-card:hover {
   transform: translateY(-4px);
 }
 
-/* Orientation */
 .jam-card.left {
   margin-right: auto;
   margin-left: 5%;
@@ -420,8 +405,6 @@
   justify-content: flex-start;
 }
 
-
-/* --- THE GREY CONNECTOR --- */
 .jam-card::after {
   content: "";
   position: absolute;
@@ -442,14 +425,12 @@
   border-radius: 0 50px 50px 0;
 }
 
-
-/* --- THE ICON BOX --- */
 .jam-icon {
   position: absolute;
   width: 180px; height: 180px;
   border-radius: 40px;
   display: flex; align-items: center; justify-content: center;
-  z-index: 20; /* TOP LAYER */
+  z-index: 20;
   padding: 32px;
   top: 50%; transform: translateY(-50%);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3);
@@ -464,45 +445,35 @@
   filter: brightness(0) invert(1);
 }
 
-/* Icon Colors */
 .jam-icon.animation { background: var(--anim-mid); box-shadow: inset 0 5px 0 var(--anim-light), inset 0 -5px 0 var(--anim-dark); }
 .jam-icon.game { background: var(--game-mid); box-shadow: inset 0 5px 0 var(--game-light), inset 0 -5px 0 var(--game-dark); }
 .jam-icon.photo { background: var(--photo-mid); box-shadow: inset 0 5px 0 var(--photo-light), inset 0 -5px 0 var(--photo-dark); }
 .jam-icon.video { background: var(--video-mid); box-shadow: inset 0 5px 0 var(--video-light), inset 0 -5px 0 var(--video-dark); }
 
-
-/* --- THE CONTENT BOX (Dark Grey) --- */
 .jam-content {
   position: relative;
   flex: 1;
-  /* Match Icon Height exactly */
   height: 180px; 
   
   background: var(--dark);
   border-radius: var(--border-radius-md);
   
-  /* Flexbox to vertical center text */
   display: flex; 
   align-items: center; 
   justify-content: center;
   
   overflow: hidden; 
   
-  /* Z-INDEX 5: Sits behind Icon, above Connector */
   z-index: 5; 
   
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-
-/* --- THE SLIDING CURTAIN --- */
 .jam-content::before {
   content: "";
   position: absolute;
   top: 0; bottom: 0;
   width: 0;
-  
-  /* Z-INDEX 6: Above Background, Below Text */
   z-index: 6; 
   
   transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -510,32 +481,24 @@
 
 .jam-card:hover .jam-content::before { width: 100%; }
 
-/* Colors */
 .jam-card:has(.jam-icon.animation) .jam-content::before { background: var(--anim-dark); }
 .jam-card:has(.jam-icon.game) .jam-content::before { background: var(--game-dark); }
 .jam-card:has(.jam-icon.photo) .jam-content::before { background: var(--photo-dark); }
 .jam-card:has(.jam-icon.video) .jam-content::before { background: var(--video-dark); }
 
-/* Directions */
 .jam-card.left .jam-content::before { left: 0; }
 .jam-card.right .jam-content::before { right: 0; }
 
-
-/* --- TEXT LAYOUT & POSITIONING --- */
-/* This targets both Default and Hover text wrappers */
 .jam-content-default, 
 .jam-content-hover {
   position: relative;
   width: 100%;
   
-  /* Z-INDEX 10: Ensures text is always on top of the colored curtain */
   z-index: 10; 
   
   transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* DEFAULT TEXT PADDING: Move it away from the inset Icon */
-/* Left Card: Icon is on Left -> Pad Left side */
 .jam-card.left .jam-content-default,
 .jam-card.left .jam-content-hover {
   padding-left: 150px; 
@@ -543,7 +506,6 @@
   text-align: left;
 }
 
-/* Right Card: Icon is on Right -> Pad Right side */
 .jam-card.right .jam-content-default,
 .jam-card.right .jam-content-hover {
   padding-right: 150px; 
@@ -552,10 +514,6 @@
   display: flex; flex-direction: column; align-items: flex-end;
 }
 
-
-/* --- ANIMATION LOGIC --- */
-
-/* 1. Default Text (Fades Out) */
 .jam-content-default {
   display: block;
   opacity: 1;
@@ -567,12 +525,10 @@
   transform: scale(0.95);
 }
 
-/* 2. Hover Text (Slides IN) */
 .jam-content-hover {
   position: absolute;
   top: 0; bottom: 0; left: 0; right: 0;
-  
-  /* Use Flexbox to vertically center the hover text */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -581,14 +537,11 @@
   pointer-events: none;
 }
 
-/* Left Card: Text Slides In from Left */
 .jam-card.left .jam-content-hover { transform: translateX(-50px); }
 .jam-card.left:hover .jam-content-hover { opacity: 1; transform: translateX(0); pointer-events: auto; }
 
-/* Right Card: Text Slides In from Right */
 .jam-card.right .jam-content-hover { transform: translateX(50px); }
 .jam-card.right:hover .jam-content-hover { opacity: 1; transform: translateX(0); pointer-events: auto; }
-
 
 /* --- TYPOGRAPHY --- */
 .jam-content h3 {
@@ -601,7 +554,6 @@
   font-weight: 300; font-size: 15px; line-height: 1.5; margin: 0;
 }
 
-/* Make hover text crisp white */
 .jam-content-hover p { color: var(--white); }
 
 
@@ -683,13 +635,55 @@
 .slider-arrow.left { left: 5vw; }
 .slider-arrow.right { right: 5vw; }
 
+/* CALL TO ACTION BUTTON */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: var(--grey-mid);
+  box-shadow:
+    inset 0 3px 0 var(--grey-highlight),
+    inset 0 -5px 0 var(--grey);
+    
+  color: #fff;
+  border: none;
+  padding: 14px 48px;
+  border-radius: 15px;
+  font-family: 'Sono', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.cta-btn:hover {
+  background: #BDBDBD;
+  color: var(--dark);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 3px 0 #E9E9E9,
+    inset 0 -5px 0 var(--grey-mid);
+}
+
+.cta-btn:active {
+  background: var(--grey);
+  color: #fff;
+  transform: translateY(0);
+  box-shadow:
+    inset 0 3px 0 var(--grey-mid),
+    inset 0 -5px 0 var(--dark);
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .hero h1 { font-size: 40px; }
   .timer { gap: 16px; }
   .time-box { width: 48px; height: 64px; font-size: 36px; }
   
-  /* Stack cards on mobile */
   .jam-card { 
     width: 85%; margin: 0 auto 64px auto !important; 
     flex-direction: column !important; 
@@ -701,18 +695,16 @@
     width: 120px; height: 120px; 
   }
   
-  .jam-card::after { display: none; } /* Hide connector */
-  
+  .jam-card::after { display: none; }
+
   .jam-content { width: 100%; min-height: auto; height: auto !important; }
   
-  /* Reset padding for mobile since icon is on top, not side */
   .jam-content-default, .jam-content-hover {
     padding: 32px !important; 
     text-align: center !important; 
     align-items: center !important;
   }
 
-  /* Slide from Top on Mobile */
   .jam-content::before { left: 0; right: 0; top: 0; width: 100%; height: 0; transition: height 0.4s ease; }
   .jam-card:hover .jam-content::before { height: 100%; width: 100%; }
   

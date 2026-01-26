@@ -1,0 +1,546 @@
+/* HERO SECTION */
+.madyears-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.madyears-hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  color: var(--dark);
+}
+
+.hero-logo {
+  width: 180px;
+  margin: 24px 0;
+}
+
+.madyears-hero p {
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--dark);
+}
+
+/* PARTICIPATION CARD */
+.participation-card {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 30, 30, 0.95),
+    rgba(30, 30, 30, 0.98)
+  );
+  border-radius: 48px;
+  padding: 48px 32px 60px;
+  margin-bottom: 80px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.participation-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--white);
+}
+
+.participation-intro {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 28px 32px;
+  border-radius: 24px;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.participation-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+.participation-image {
+  margin: 32px 0;
+}
+
+.participation-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.opencalls-container {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 40px 32px;
+  border-radius: 24px;
+  margin-top: 40px;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.participation-block {
+  margin-top: 52px;
+  margin-bottom: 52px;
+}
+
+.participation-block:first-child {
+  margin-top: 0;
+}
+
+.participation-block h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--white);
+}
+
+.participation-block p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.participation-block h3.left {
+  text-align: left;
+}
+
+.participation-block p.left {
+  text-align: left;
+}
+
+.participation-block h3.center {
+  text-align: center;
+}
+
+.participation-block p.center {
+  text-align: center;
+}
+
+.participation-block h3.right {
+  text-align: right;
+}
+
+.participation-block p.right {
+  text-align: right;
+}
+
+
+.cta-btn.orange-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 100px;
+  border-radius: 12px;
+
+  font-family: 'Tomorrow', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+
+  background: var(--orange);
+  box-shadow:
+    inset 0 5px 0 var(--yellow),
+    inset 0 -6px 0 var(--dark-orange);
+
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn.orange-btn:hover {
+  transform: translateY(-2px);
+  background: var(--yellow);
+  box-shadow:
+    inset 0 3px 0 var(--bright-yellow),
+    inset 0 -4px 0 var(--orange);
+}
+
+.cta-btn.orange-btn:active {
+  transform: translateY(0);
+  background: var(--dark-orange);
+  box-shadow:
+    inset 0 3px 0 var(--orange),
+    inset 0 -4px 0 var(--darkest-orange);
+}
+
+/* TEAM SECTION */
+.team-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.team-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--dark);
+}
+
+.team-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-btn img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.team-card {
+  background: var(--grey);
+  border-radius: 32px;
+  padding: 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  box-shadow:
+    inset 0 8px 0 var(--grey-mid),
+    inset 0 -9px 0 var(--dark);
+  flex: 1;
+  min-width: 0;
+}
+
+.team-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 4px solid var(--orange);
+}
+
+.team-info {
+  background: var(--dark);
+  border-radius: 30px;
+  padding: 16px;
+  text-align: left;
+  flex: 1;
+  color: var(--white);
+}
+
+.team-info h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.team-info h3:first-child {
+  margin-top: 0;
+}
+
+.team-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.team-info .team-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.team-info a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.team-info a:hover {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+
+/* TIMELINE SECTION */
+.timeline-section {
+  margin-bottom: 80px;
+}
+
+.timeline-title {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 56px;
+  color: var(--dark);
+  letter-spacing: 1px;
+}
+
+.timeline-text {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.edition-card {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.95),
+    rgba(37, 37, 37, 0.95)
+  );
+  border-radius: 32px;
+  padding: 36px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edition-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 24px;
+  padding: 32px 36px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 6px 20px rgba(0,0,0,0.35);
+}
+
+.edition-content {
+  flex: 1;
+  text-align: left;
+  color: var(--white);
+}
+
+.edition-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+
+.edition-content p {
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.edition-icon {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* FINAL CARD */
+.final-card {
+  flex-direction: column;
+  text-align: center;
+  padding: 56px 48px;
+  gap: 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.98),
+    rgba(20, 20, 20, 0.98)
+  );
+}
+
+.final-card h3 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.final-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.95;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.final-card .cta-btn {
+  margin: 0 auto;
+}
+
+/* FOOTER CATEGORIES */
+.footer-categories {
+  padding: 40px 0 32px;
+  text-align: center;
+}
+
+.footer-categories h3 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--white);
+}
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.category-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.category-divider {
+  font-family: 'Sono', monospace;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .madyears-hero h1 {
+    font-size: 32px;
+  }
+
+  .team-carousel {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .carousel-btn {
+    order: 2;
+  }
+
+  .team-card {
+    order: 1;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-info {
+    text-align: center;
+  }
+
+  .team-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .edition-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .edition-content {
+    text-align: center;
+  }
+
+  .edition-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .timeline-title {
+    font-size: 32px;
+  }
+
+  .category-icons {
+    gap: 24px;
+  }
+
+  .category-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .madyears-hero h1 {
+    font-size: 26px;
+  }
+
+  .participation-card {
+    padding: 32px 20px 48px;
+  }
+
+  .opencalls-container {
+    padding: 32px 20px;
+  }
+
+  .team-card {
+    padding: 24px;
+  }
+
+  .edition-card {
+    padding: 24px;
+  }
+
+  .final-card {
+    padding: 40px 24px;
+  }
+
+  .carousel-btn img {
+    width: 32px;
+    height: 32px;
+  }
+}

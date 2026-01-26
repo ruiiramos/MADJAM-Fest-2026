@@ -24,7 +24,7 @@ function switchForm(type, clickedBtn) {
     const titleEl = document.getElementById('hero-title');
     const descEl = document.getElementById('hero-desc');
     const iframeEl = document.getElementById('google-form');
-    const allButtons = document.querySelectorAll('.form-tabs .nav-btn');
+    const allButtons = document.querySelectorAll('.form-tabs .orange-btn');
 
     // 2. Animate Text Change
     titleEl.style.opacity = 0;
