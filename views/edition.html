@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 MAD Editions – MAD Jam Fest</title>
+    <link rel="icon" href="../assets/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;600;700&family=Sono:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/edition.css">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <div class="page">
+
+        <!-- NAVBAR -->
+        <nav class="nav">
+            <a href="../views/inscricoes.html" class="nav-btn green">Inscrições</a>
+            <a href="../index.html" class="nav-btn orange">Home</a>
+            <a href="../views/madyears.html" class="nav-btn orange">10 MAD Editions</a>
+            <a href="../views/faq.html" class="nav-btn orange">FAQ</a>
+            <a href="../assets/kit_sobrevivencia.pdf" class="nav-btn orange">Kit de Sobrevivência</a>
+        </nav>
+
+        <main class="edition-page">
+
+            <!-- HERO -->
+            <section class="edition-hero">
+                <h1 id="edition-title"></h1>
+                <img id="edition-logo" alt="Logo da edição">
+                <p id="edition-description"></p>
+            </section>
+
+            <!-- GALERIA / FOTO DE GRUPO -->
+            <section class="edition-gallery">
+                <img id="edition-group-photo" alt="Foto da edição">
+            </section>
+
+            <!-- PROJETOS -->
+            <section class="edition-projects" id="projects-container">
+                <!-- cards entram via JS -->
+            </section>
+
+            <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                voltar ao topo da página
+            </button>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <h3>MAD Jam Fest 2025</h3>
+            <p class="footer-subtitle">Escola Superior de Media, Artes e Design • Rua D. Sancho I • nº 981 4480-876 Vila do Conde</p>
+
+            <div class="footer-box social-icons-box">
+            <div class="social-icons">
+                <a href="https://x.com/MADJamFest" class="social-icon">
+                <img src="../assets/icons/twitter-icon.svg" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/madjamfest/" class="social-icon">
+                <img src="../assets/icons/instagram-icon.svg" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/madjamfest/" class="social-icon">
+                <img src="../assets/icons/facebook-icon.svg" alt="Facebook">
+                </a>
+                <a href="https://www.tiktok.com/@madjamfest" class="social-icon">
+                <img src="../assets/icons/tiktok-icon.svg" alt="TikTok">
+                </a>
+                <a href="https://discord.com/invite/ZtnDq3H" class="social-icon">
+                <img src="../assets/icons/discord-social-icon.svg" alt="Discord">
+                </a>
+            </div>
+            </div>
+
+            <div class="footer-info">
+            <span class="footer-left">2025 © ESMAD | P.PORTO</span>
+            <span class="footer-right">
+                <a href="../views/inscricoes.html" class="footer-link" target="_blank" rel="noopener">INSCRIÇÕES</a> – <a href="https://linktr.ee/madjamfest" class="footer-link" target="_blank" rel="noopener">LINKTREE</a>
+            </span>
+            </div>
+
+            <div class="footer-box partners-section">
+            <h4>Com apoio de:</h4>
+            <div class="partners-grid">
+                <div class="partner-logo"><img src="../assets/icons/rpgaming-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/omen-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/hyperx-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/ae-esmad-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/ipdj-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/neca-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/dg-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/usf-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/thunderize-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/free-your-soul-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/guess-the-choice-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/canal-180-icon.svg" alt=""></div>
+                <div class="partner-logo"><img src="../assets/icons/d-icon.svg" alt=""></div>
+            </div>
+            </div>
+        </footer>
+    </div>
+    
+<script src="../scripts/edition-data.js"></script>
+<script src="../scripts/edition-page.js"></script>
+</body>
+</html>
