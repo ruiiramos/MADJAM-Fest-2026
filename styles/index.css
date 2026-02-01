@@ -414,10 +414,6 @@
   overflow: visible; 
 }
 
-.jam-card:hover {
-  /* transform: translateY(-4px); */
-}
-
 .jam-card.left {
   margin-right: auto;
   margin-left: 5%;
