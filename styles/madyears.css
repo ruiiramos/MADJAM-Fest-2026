@@ -29,16 +29,15 @@
 .participation-card {
   background: linear-gradient(
     180deg,
-    rgba(30, 30, 30, 0.95),
-    rgba(30, 30, 30, 0.98)
+    var(--grey),
+    var(--grey)
   );
   border-radius: 48px;
   padding: 48px 32px 60px;
   margin-bottom: 80px;
   box-shadow: 
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    inset 0 10px 0 var(--grey-mid),
+    inset 0 -10px 0 var(--black-grey);
 }
 
 .participation-inner {
@@ -54,12 +53,9 @@
   margin-bottom: 40px;
   opacity: 0.95;
   font-weight: 400;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--dark);
   padding: 28px 32px;
   border-radius: 24px;
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .participation-title {
@@ -69,25 +65,73 @@
   letter-spacing: 0.5px;
 }
 
-.participation-image {
+.participation-video {
+  position: relative;
   margin: 32px 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.participation-image img {
+.participation-video video {
   width: 100%;
-  max-width: 600px;
+  height: auto;
+  display: block;
   border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.custom-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--dark);
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.custom-play-btn:hover {
+  background: var(--grey);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.custom-play-btn:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.custom-play-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-play-btn svg {
+  width: 80px;
+  height: 80px;
+}
+
+.custom-play-btn svg circle {
+  stroke: var(--orange); /* Circle outline color */
+}
+
+.custom-play-btn svg path {
+  fill: var(--orange); /* Play triangle color */
 }
 
 .opencalls-container {
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--dark);
   padding: 40px 32px;
   border-radius: 24px;
   margin-top: 40px;
-  box-shadow: 
-    0 6px 20px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .participation-block {
@@ -98,6 +142,8 @@
 .participation-block:first-child {
   margin-top: 0;
 }
+
+
 
 .participation-block h3 {
   font-size: 14px;
@@ -195,49 +241,114 @@
 }
 
 .team-carousel {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  max-width: 900px;
-  margin: 0 auto;
+  background: transparent;
+}
+
+.team-card-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
 }
 
 .carousel-btn {
-  background: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background: none;
   border: none;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 12px;
-  transition: transform 0.2s ease;
-  flex-shrink: 0;
-}
-
-.carousel-btn:hover {
-  transform: scale(1.1);
-}
-
-.carousel-btn:active {
-  transform: scale(0.95);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .carousel-btn img {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  height: auto;
+  max-width: 48px;
   display: block;
+  filter: none;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+  filter: brightness(1.3);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(0.95);
+  filter: brightness(0.7);
+}
+
+.carousel-btn.prev {
+  left: 5vw;
+}
+
+.carousel-btn.next {
+  right: 5vw;
 }
 
 .team-card {
+  position: absolute;
+  width: 50%;
+  max-width: 700px;
   background: var(--grey);
   border-radius: 32px;
   padding: 32px;
   display: flex;
   gap: 24px;
   align-items: stretch;
-  box-shadow:
-    inset 0 8px 0 var(--grey-mid),
-    inset 0 -9px 0 var(--dark);
-  flex: 1;
-  min-width: 0;
+  box-shadow: inset 0 7px 0 var(--grey-mid), inset 0 -9px 0 var(--black-grey), 0 20px 50px rgba(0,0,0,0.4);
+  border: 2px solid #333;
+  opacity: 0;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.team-card.active {
+  opacity: 1;
+  z-index: 10;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: all;
+  border-color: var(--orange);
+}
+
+.team-card.prev {
+  opacity: 0.5;
+  z-index: 5;
+  left: 15%;
+  transform: translate(-50%, -50%) scale(0.6);
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.team-card.next {
+  opacity: 0.5;
+  z-index: 5;
+  left: 85%;
+  transform: translate(-50%, -50%) scale(0.6);
+  cursor: pointer;
+  pointer-events: all;
 }
 
 .team-photo {
@@ -245,11 +356,10 @@
   height: auto;
   border-radius: 10%;
   object-fit: cover;
-  align-self: stretch; /* Explicitly tells the photo to stretch vertically */
-  object-fit: cover; /* Prevents the face from stretching/distorting */
+  align-self: stretch;
   flex-shrink: 0;
   border: 4px solid var(--orange);
-  border-radius: 20px; /* Adjust this to your liking */
+  border-radius: 20px;
 }
 
 .team-info {
@@ -327,39 +437,17 @@
 .edition-card {
   background: linear-gradient(
     135deg,
-    rgba(30, 30, 30, 0.95),
-    rgba(37, 37, 37, 0.95)
+    var(--grey),
+    var(--grey)
   );
   border-radius: 32px;
   padding: 36px;
   display: flex;
   align-items: center;
   gap: 32px;
-
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255,255,255,0.04);
-
-  transition:
-    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
-    box-shadow 0.35s ease,
-    background 0.35s ease;
-}
-
-.edition-card:hover {
-  transform: translateY(-6px);
-
-  background: linear-gradient(
-    135deg,
-    rgba(35, 35, 35, 0.98),
-    rgba(45, 45, 45, 0.98)
-  );
-
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255,255,255,0.06);
-
-  cursor: pointer;
+  box-shadow: 
+    inset 0 7px 0 var(--grey-mid),
+    inset 0 -9px 0 var(--black-grey);
 }
 
 .edition-inner {
@@ -367,13 +455,28 @@
   align-items: center;
   gap: 32px;
 
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--dark);
   border-radius: 24px;
   padding: 32px 36px;
 
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.05),
-    0 6px 20px rgba(0,0,0,0.35);
+  transition:
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background 0.35s ease;
+
+  cursor: pointer;
+  width: 100%;
+}
+
+.edition-inner:hover {
+  transform: translateY(6px);
+
+  background: var(--black-grey);
+}
+
+.edition-inner:active {
+  transform: translateY(-2px);
+
+  background: var(--grey-mid);
 }
 
 .edition-content {
@@ -406,15 +509,29 @@
 
 /* FINAL CARD */
 .final-card {
-  flex-direction: column;
-  text-align: center;
-  padding: 56px 48px;
-  gap: 24px;
   background: linear-gradient(
     135deg,
-    rgba(30, 30, 30, 0.98),
-    rgba(20, 20, 20, 0.98)
+    rgba(30, 30, 30, 0.95),
+    rgba(37, 37, 37, 0.95)
   );
+  border-radius: 32px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  box-shadow: 
+    inset 0 7px 0 rgba(85, 85, 85, 0.6),
+    inset 0 -9px 0 rgba(16, 16, 16, 0.8);
+}
+
+.final-card-content {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 24px;
+  padding: 56px 48px;
+  text-align: center;
+  width: 100%;
 }
 
 .final-card h3 {
@@ -429,12 +546,12 @@
   font-size: 15px;
   line-height: 1.8;
   opacity: 0.95;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   color: var(--white);
 }
 
 .final-card .cta-btn {
-  margin: 0 auto;
+  margin: 24px auto 0;
 }
 
 /* FOOTER CATEGORIES */
@@ -488,19 +605,28 @@
   }
 
   .team-carousel {
-    flex-direction: column;
-    gap: 24px;
+    padding: 2rem 1rem;
   }
 
-  .carousel-btn {
-    order: 2;
+  .carousel-btn.prev {
+    left: 5px;
+  }
+
+  .carousel-btn.next {
+    right: 5px;
   }
 
   .team-card {
-    order: 1;
+    width: 85%;
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .team-card.prev,
+  .team-card.next {
+    opacity: 0;
+    pointer-events: none;
   }
 
   .team-info {
@@ -562,7 +688,7 @@
   }
 
   .final-card {
-    padding: 40px 24px;
+    padding: 24px;
   }
 
   .carousel-btn img {

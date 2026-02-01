@@ -37,14 +37,74 @@ const teamMembers = [
   }
 ];
 
-let currentSlide = 0;
+let currentTeamMember = 0;
+const totalMembers = teamMembers.length;
+let autoPlayTimer;
+let resumeTimer;
+let teamCards = [];
 
-function updateCarousel() {
-  const member = teamMembers[currentSlide];
-  const teamCard = document.querySelector('.team-card');
+// Video player controls
+function initVideoPlayer() {
+  const video = document.getElementById('madVideo');
+  const playBtn = document.getElementById('playBtn');
   
-  if (teamCard) {
-    teamCard.innerHTML = `
+  if (!video || !playBtn) return;
+  
+  // Play/Pause functionality
+  playBtn.addEventListener('click', function() {
+    if (video.paused) {
+      video.play();
+      playBtn.classList.add('hidden');
+    } else {
+      video.pause();
+      playBtn.classList.remove('hidden');
+    }
+  });
+  
+  // Show play button when video is paused
+  video.addEventListener('pause', function() {
+    playBtn.classList.remove('hidden');
+  });
+  
+  // Hide play button when video is playing
+  video.addEventListener('play', function() {
+    playBtn.classList.add('hidden');
+  });
+  
+  // Show play button when video ends
+  video.addEventListener('ended', function() {
+    playBtn.classList.remove('hidden');
+  });
+  
+  // Click on video to play/pause
+  video.addEventListener('click', function() {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+}
+
+function createTeamCards() {
+  const carousel = document.querySelector('.team-carousel');
+  if (!carousel) return;
+
+  // Remove the existing team-card placeholder
+  const placeholder = carousel.querySelector('.team-card');
+  if (placeholder) {
+    placeholder.remove();
+  }
+
+  // Create container for cards
+  const container = document.createElement('div');
+  container.className = 'team-card-container';
+  
+  // Create all team cards
+  teamMembers.forEach((member, index) => {
+    const card = document.createElement('div');
+    card.className = 'team-card';
+    card.innerHTML = `
       <img src="${member.avatar}" alt="${member.name}" class="team-photo">
       <div class="team-info">
         <h3>Nome:</h3>
@@ -57,20 +117,74 @@ function updateCarousel() {
         <p><a href="mailto:${member.contact}">${member.contact}</a></p>
       </div>
     `;
-  }
+    
+    // Add click listener
+    card.addEventListener('click', () => {
+      if (card.classList.contains('prev')) previousSlide();
+      if (card.classList.contains('next')) nextSlide();
+    });
+    
+    container.appendChild(card);
+  });
+
+  // Insert container between the buttons
+  const nextButton = carousel.querySelector('.carousel-btn.next');
+  carousel.insertBefore(container, nextButton);
+
+  // Store reference to cards
+  teamCards = container.querySelectorAll('.team-card');
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % teamMembers.length;
-  updateCarousel();
+function updateTeamCarousel() {
+  if (teamCards.length === 0) return;
+
+  // Remove all classes
+  teamCards.forEach(card => {
+    card.classList.remove('active', 'prev', 'next');
+  });
+
+  // Calculate indices
+  const prevIndex = (currentTeamMember - 1 + totalMembers) % totalMembers;
+  const nextIndex = (currentTeamMember + 1) % totalMembers;
+
+  // Set classes
+  teamCards[currentTeamMember].classList.add('active');
+  teamCards[prevIndex].classList.add('prev');
+  teamCards[nextIndex].classList.add('next');
+}
+
+function nextSlide(isAuto = false) {
+  currentTeamMember = (currentTeamMember + 1) % totalMembers;
+  updateTeamCarousel();
+  if (!isAuto) handleManualInteraction();
 }
 
 function previousSlide() {
-  currentSlide = (currentSlide - 1 + teamMembers.length) % teamMembers.length;
-  updateCarousel();
+  currentTeamMember = (currentTeamMember - 1 + totalMembers) % totalMembers;
+  updateTeamCarousel();
+  handleManualInteraction();
 }
 
-// Initialize carousel on page load
+function handleManualInteraction() {
+  clearInterval(autoPlayTimer);
+  clearTimeout(resumeTimer);
+
+  resumeTimer = setTimeout(() => {
+    startAutoPlay();
+  }, 10000);
+}
+
+function startAutoPlay() {
+  clearInterval(autoPlayTimer);
+  autoPlayTimer = setInterval(() => {
+    nextSlide(true);
+  }, 3000);
+}
+
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-  updateCarousel();
+  initVideoPlayer();
+  createTeamCards();
+  updateTeamCarousel();
+  startAutoPlay();
 });

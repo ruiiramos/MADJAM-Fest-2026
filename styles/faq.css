@@ -78,15 +78,34 @@ body {
   box-shadow: inset 0 -5px 0 #515151;
   cursor: pointer;
   transition: border-radius 0.3s ease;
+  
+  display: grid;
+  grid-template-rows: auto 0fr; /* Closed state */
+  overflow: hidden;
+  transition: grid-template-rows 0.3s ease, border-radius 0.3s ease;
 }
 
 .faq-item[open] {
   border-radius: 28px;
+
+  grid-template-rows: auto 1fr; /* Open state */
+}
+
+.faq-item[open] p{
+  margin-top: 14px;
+  visibility: visible;
 }
 
 .faq-item p {
   margin-top: 16px;
   padding-right: 8px;
+
+  grid-row: 2;
+  min-height: 0;
+  margin-top: 0; 
+  padding: 0 0 14px 0; /* Adjust spacing since margin won't animate well */
+  visibility: hidden; /* Hide text until opening */
+  transition: visibility 0.3s;
 }
 
 .faq-item summary {
@@ -98,6 +117,8 @@ body {
   font-family: 'Tomorrow', sans-serif;
   font-size: 15px;
   font-weight: 500;
+  
+  grid-row: 1;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -108,14 +129,62 @@ body {
     font-size: 18px;
 }
 
-.faq-arrow {
-  width: 18px;
-  height: 18px;
+/* Container for the arrow */
+.faq-arrow-container {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease;
 }
 
+/* The dark outer triangle */
+.faq-arrow-outer {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 14px solid #252525; /* Match your text color */
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* The smaller white inner triangle */
+.faq-arrow-inner {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid white; /* The "hollow" color */
+  position: absolute;
+  top: -11px; /* Adjust to align inside the outer triangle */
+  left: -5px;
+  transition: opacity 0.2s ease;
+}
+
+/* HOVER EFFECT: Hide the white inner triangle */
+.faq-item summary:hover .faq-arrow-inner {
+  opacity: 0;
+}
+
+/* OPEN STATE: Rotate the whole container */
+.faq-item[open] .faq-arrow-container {
+  transform: rotate(180deg);
+}
+
+/* When open, rotate 180deg */
 .faq-item[open] .faq-arrow {
   transform: rotate(180deg);
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 12px solid #252525;
+
+  transform: rotate(180deg);
+}
+
+.faq-item[open] .faq-arrow:hover {
+  transform: rotate(180deg) scale(1.1);
 }
 
 .faq-item p {

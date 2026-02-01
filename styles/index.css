@@ -64,7 +64,7 @@
   background: var(--grey);
   border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
   z-index: 0;
-  box-shadow: 0 10px 0 #1A1A1A;
+  box-shadow: 0 10px 0 var(--black-grey);
 }
 
 .column-inner > * {
@@ -82,7 +82,7 @@
   padding: 24px;
   background: var(--grey);
   border-radius: var(--border-radius-lg);
-  box-shadow: inset 0 5px 0 #555555, inset 0 -5px 0 rgba(0,0,0,0.4);
+  box-shadow: inset 0 5px 0 var(--grey-mid), inset 0 -5px 0 var(--black-grey);
   transition: transform 0.3s ease;
   cursor: pointer;
   z-index: 5;
@@ -143,7 +143,7 @@
 .timer {
   display: flex;
   justify-content: center;
-  gap: 90px;
+  gap: 30px;
 }
 
 .time-unit {
@@ -166,7 +166,6 @@
   display: flex; align-items: center; justify-content: center;
   font-family: 'Tomorrow', sans-serif;
   font-weight: 500; font-size: 35px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .time-label {
@@ -175,25 +174,61 @@
   font-weight: 400; font-size: 15px;
 }
 
+/* =========================================
+   3. COUNTDOWN TIMER (UPDATED)
+   ========================================= */
+
 .countdown-stats {
-  display: flex; justify-content: center; align-items: center; flex-wrap: wrap; 
-  gap: 86px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; /* Allows multiple rows */
+  gap: 16px;       /* Reduced gap for better fit */
   position: absolute;
-  bottom: 24px; left: 0; right: 0;
+  bottom: 24px; 
+  left: 0; 
+  right: 0;
   padding: 0 24px;
-  opacity: 1; visibility: visible;
-  z-index: 5; pointer-events: auto;
+  opacity: 1; 
+  visibility: visible;
+  z-index: 5; 
+  pointer-events: auto;
 }
 
 .countdown-stat {
   background: #1A1A1A;
   color: var(--white);
   font-family: 'Sono', monospace;
-  font-size: 16px; font-weight: 400;
-  width: 220px; padding: 14px 0;
-  display: flex; justify-content: center; align-items: center;
-  border-radius: 24px; white-space: nowrap;
-  box-shadow: inset 0 5px 0 #AF3A01, inset 0 -5px 0 var(--orange);
+  font-size: 14px; /* Slightly smaller to fit 3 items */
+  font-weight: 400;
+  flex: 1 1 150px; /* Allows growth and wrapping */
+  max-width: 180px; /* Limits size so 3 fit in a row */
+  padding: 12px 0;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  border-radius: 24px; 
+  white-space: nowrap;
+  box-shadow: inset 0 5px 0 var(--darkest-orange), inset 0 -5px 0 var(--orange);
+}
+
+/* Adjust the hover padding to accommodate more rows if needed */
+.countdown-container:hover .countdown {
+  padding-bottom: 190px; /* Increased slightly for multi-row safety */
+}
+
+.countdown-container:hover .countdown::before {
+  bottom: 160px; /* Increased to match the new padding */
+}
+
+/* DEACTIVATED VERSION */
+.countdown-stat.deactivated {
+  background:  #757575; /* Middle light grey */
+
+  box-shadow: inset 0 5px 0 var(--darkest-orange), inset 0 -5px 0 var(--orange);
+    
+  pointer-events: none; /* Prevents clicking/interaction */
+  cursor: default;
 }
 
 /* =========================================
@@ -206,7 +241,6 @@
   padding: 32px;
   max-width: 420px; width: 100%;
   display: flex; flex-direction: column; gap: 32px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   z-index: 5;
 }
 
@@ -286,16 +320,9 @@
   border-radius: var(--border-radius-md);
   
   overflow: hidden; 
-  
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   margin-top: 24px;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
   z-index: 5;
-}
-
-.mad-jam-section:hover {
-  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
 }
 
 .mad-jam-banner {
@@ -388,7 +415,7 @@
 }
 
 .jam-card:hover {
-  transform: translateY(-4px);
+  /* transform: translateY(-4px); */
 }
 
 .jam-card.left {
@@ -464,9 +491,7 @@
   
   overflow: hidden; 
   
-  z-index: 5; 
-  
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 5;
 }
 
 .jam-content::before {

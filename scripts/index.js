@@ -1,41 +1,33 @@
-// Countdown Timer
-const targetDate = new Date();
-targetDate.setDate(targetDate.getDate() + 3);
-targetDate.setHours(targetDate.getHours() + 15);
-targetDate.setMinutes(targetDate.getMinutes() + 56);
+// Set target: February 27th, 2026 at 15:00
+const targetDate = new Date(2026, 1, 27, 15, 0, 0); 
 
 function updateCountdown() {
     const now = new Date();
     const diff = targetDate - now;
 
     if (diff <= 0) {
-        document.getElementById('days-tens').textContent = '0';
-        document.getElementById('days-ones').textContent = '0';
-        document.getElementById('hours-tens').textContent = '0';
-        document.getElementById('hours-ones').textContent = '0';
-        document.getElementById('minutes-tens').textContent = '0';
-        document.getElementById('minutes-ones').textContent = '0';
+        // ... (existing zero-reset logic)
+        document.getElementById('seconds-tens').textContent = '0';
+        document.getElementById('seconds-ones').textContent = '0';
         return;
     }
 
     const days = Math.floor(diff / 86400000);
     const hours = Math.floor(diff / 3600000) % 24;
     const minutes = Math.floor(diff / 60000) % 60;
+    const seconds = Math.floor(diff / 1000) % 60; // New calculation
 
-    // Split digits for display
-    const daysTens = Math.floor(days / 10);
-    const daysOnes = days % 10;
-    const hoursTens = Math.floor(hours / 10);
-    const hoursOnes = hours % 10;
-    const minutesTens = Math.floor(minutes / 10);
-    const minutesOnes = minutes % 10;
-
-    document.getElementById('days-tens').textContent = daysTens;
-    document.getElementById('days-ones').textContent = daysOnes;
-    document.getElementById('hours-tens').textContent = hoursTens;
-    document.getElementById('hours-ones').textContent = hoursOnes;
-    document.getElementById('minutes-tens').textContent = minutesTens;
-    document.getElementById('minutes-ones').textContent = minutesOnes;
+    // Update digits
+    document.getElementById('days-tens').textContent = Math.floor(days / 10);
+    document.getElementById('days-ones').textContent = days % 10;
+    document.getElementById('hours-tens').textContent = Math.floor(hours / 10);
+    document.getElementById('hours-ones').textContent = hours % 10;
+    document.getElementById('minutes-tens').textContent = Math.floor(minutes / 10);
+    document.getElementById('minutes-ones').textContent = minutes % 10;
+    
+    // New digit display
+    document.getElementById('seconds-tens').textContent = Math.floor(seconds / 10);
+    document.getElementById('seconds-ones').textContent = seconds % 10;
 }
 
 // Update countdown every second
