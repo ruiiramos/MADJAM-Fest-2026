@@ -232,7 +232,7 @@
   padding: 32px;
   display: flex;
   gap: 24px;
-  align-items: flex-start;
+  align-items: stretch;
   box-shadow:
     inset 0 8px 0 var(--grey-mid),
     inset 0 -9px 0 var(--dark);
@@ -242,11 +242,14 @@
 
 .team-photo {
   width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  height: auto;
+  border-radius: 10%;
   object-fit: cover;
+  align-self: stretch; /* Explicitly tells the photo to stretch vertically */
+  object-fit: cover; /* Prevents the face from stretching/distorting */
   flex-shrink: 0;
   border: 4px solid var(--orange);
+  border-radius: 20px; /* Adjust this to your liking */
 }
 
 .team-info {
